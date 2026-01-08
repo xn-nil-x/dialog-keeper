@@ -205,3 +205,57 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ==============================================
+# СЕКРЕТНЫЕ ДАННЫЕ ПРОЕКТА - НЕ коммитить!
+# ==============================================
+
+# Папки с секретами
+secrets/
+.secrets/
+credentials/
+.credentials/
+private/
+
+# Дополнительные .env файлы
+.env.production
+.env.development
+.env.test
+!.env.example
+
+# Telegram Bot токены
+bot_token.txt
+telegram_token.txt
+*telegram*token*.txt
+
+# API ключи (AI, Kaiten, etc)
+kaiten_token.txt
+openai_api_key.txt
+anthropic_api_key.txt
+*api*key*.txt
+*api*token*.txt
+
+# Конфигурации с секретами
+config/secrets.json
+config/credentials.json
+config/tokens.json
+config/production.json
+**/secrets.yml
+**/credentials.yml
+
+# Пользовательские данные
+user_data/
+sessions/
+*.session
+chat_history/
+archives/
+
+# Backup и dump файлы
+*.backup
+*.bak
+*.dump
+backups/
+
+# Логи с чувствительными данными
+logs/
+*.log

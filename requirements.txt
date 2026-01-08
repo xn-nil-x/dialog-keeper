@@ -1,0 +1,71 @@
+# ============================================
+# DIALOG KEEPER - Python Dependencies
+# ============================================
+
+# Core
+python-telegram-bot>=20.7
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# AI / LLM
+openai>=1.7.0
+anthropic>=0.8.0
+langchain>=0.1.0
+langchain-openai>=0.0.5
+sentence-transformers>=2.2.2
+
+# Vector Database
+qdrant-client>=1.7.0
+chromadb>=0.4.22  # Alternative
+
+# Database
+sqlalchemy>=2.0.25
+alembic>=1.13.0
+psycopg2-binary>=2.9.9  # PostgreSQL
+aiosqlite>=0.19.0  # SQLite async
+
+# Cache & Queue
+redis>=5.0.1
+celery>=5.3.4
+flower>=2.0.1  # Celery monitoring
+
+# HTTP & API
+httpx>=0.26.0
+aiohttp>=3.9.1
+fastapi>=0.108.0  # Optional REST API
+uvicorn>=0.25.0  # FastAPI server
+
+# Speech-to-Text
+openai-whisper>=20231117  # Local Whisper
+pydub>=0.25.1  # Audio processing
+
+# Integrations
+google-api-python-client>=2.111.0  # Google Calendar
+google-auth>=2.25.2
+exchangelib>=5.0.0  # Outlook/Exchange
+
+# Utilities
+structlog>=23.3.0  # Structured logging
+tenacity>=8.2.3  # Retry logic
+python-slugify>=8.0.1
+pytz>=2023.3
+python-dateutil>=2.8.2
+
+# Monitoring & Debugging
+sentry-sdk>=1.39.2
+prometheus-client>=0.19.0
+
+# Development
+pytest>=7.4.3
+pytest-asyncio>=0.23.2
+pytest-cov>=4.1.0
+black>=23.12.1
+mypy>=1.8.0
+ruff>=0.1.9
+pre-commit>=3.6.0
+
+# Type stubs
+types-redis>=4.6.0
+types-pytz>=2023.3.1.1
+
