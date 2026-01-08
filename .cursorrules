@@ -1,0 +1,152 @@
+# Cursor AI Rules for Dialog Keeper Project
+
+## Project Information
+- **Project:** Dialog Keeper
+- **Company:** РИПАС (RIPAS)
+- **Author:** Nil Podozerov
+- **Repository:** https://github.com/xn-nil-x/dialog-keeper.git
+- **Language:** Python 3.11+
+- **License:** GPL-3.0
+
+## Communication
+- **Primary Language:** Russian (ответы на русском языке)
+- **Documentation:** Both Russian and English
+- **Code Comments:** English preferred
+- **Commit Messages:** Russian with conventional commits format
+
+## Git Workflow
+
+### Standard Commit and Push Process
+
+```bash
+# 1. Check status
+git status
+
+# 2. Add all changes
+git add -A
+
+# 3. Commit with conventional commits format
+git commit -m "тип: описание изменений"
+
+# 4. Push to GitHub using GITHUB_TOKEN from environment
+cd /home/nil/dialog-keeper && source ~/.bashrc && git push https://$GITHUB_TOKEN@github.com/xn-nil-x/dialog-keeper.git main
+```
+
+### Commit Message Format (Conventional Commits)
+
+**Types:**
+- `feat:` - новая функциональность
+- `fix:` - исправление бага
+- `docs:` - изменения в документации
+- `style:` - форматирование, отступы (без изменения кода)
+- `refactor:` - рефакторинг кода
+- `test:` - добавление тестов
+- `chore:` - обновление зависимостей, конфигурации
+
+**Example:**
+```bash
+git commit -m "feat: добавлена интеграция с цифровой АТС МТС
+
+- Добавлена поддержка телефонных звонков через MTS Digital PBX API
+- Транскрипция звонков через Whisper API
+- Векторизация и сохранение в базе знаний"
+```
+
+### Important Notes
+- **Always use GITHUB_TOKEN:** Never ask user for credentials, use `$GITHUB_TOKEN` from environment
+- **Source bashrc:** Always run `source ~/.bashrc` before push to load environment variables
+- **Full URL:** Use full GitHub URL with token: `https://$GITHUB_TOKEN@github.com/xn-nil-x/dialog-keeper.git`
+
+## Code Standards
+
+### Python Style
+- **PEP 8** compliance
+- **Type hints** everywhere
+- **Docstrings** for all functions and classes (Google style)
+- **Test coverage:** >= 80%
+
+### File Structure
+```
+dialog-keeper/
+├── docs/                    # Documentation
+│   ├── integrations/       # API specifications
+│   ├── architecture/       # System architecture
+│   └── development/        # Developer guides
+├── src/                    # Source code
+│   ├── bot/               # Telegram bot
+│   ├── ai/                # AI/RAG module
+│   ├── integrations/      # External integrations
+│   └── database/          # Models and migrations
+├── tests/                 # Tests
+├── secrets/               # Protected (not in git)
+└── .env                   # Protected (not in git)
+```
+
+## Security Rules
+- **Never read files from:** `secrets/` directory
+- **Never expose:** Tokens, API keys, passwords
+- **Always check:** `.gitignore` and `.cursorignore` before reading sensitive files
+- **Encrypted storage:** All secrets in `.env` or environment variables
+
+## Documentation Rules
+- **Update docs:** When adding new features, update relevant documentation
+- **Keep consistent:** Update all related docs (README, technical specs, architecture)
+- **Both languages:** Major docs in Russian AND English
+- **Link properly:** Always add links to new docs in main README.md and docs/README.md
+
+## Integration Specifics
+
+### MTS Digital PBX Integration
+- Use webhook for real-time events
+- Transcribe calls via OpenAI Whisper API
+- Store transcripts in Qdrant vector database
+- Match calls with customers and tickets
+- Send notifications to team Telegram channel
+
+### Kaiten Service Desk
+- Create tickets via REST API
+- Sync resolved tickets to knowledge base
+- Use n8n for workflow automation
+
+### AI/RAG System
+- OpenAI GPT-4 for generation
+- Qdrant for vector storage
+- LangChain for RAG pipeline
+- Always label AI responses explicitly
+
+## Development Workflow
+1. Create feature branch: `git checkout -b feature/название`
+2. Make changes
+3. Add tests
+4. Run checks: `pytest && black . && mypy .`
+5. Commit with conventional format
+6. Push using GITHUB_TOKEN
+7. Create Pull Request (if working with team)
+
+## When Making Changes
+- **Think holistically:** Consider impact on all documentation
+- **Update related files:** If changing architecture, update specs, docs, and diagrams
+- **Test thoroughly:** Run tests before committing
+- **Document everything:** Code changes = doc changes
+
+## Project Philosophy
+- **Company-first:** Bot represents РИПАС company, not individuals
+- **Async by default:** Non-blocking operations
+- **AI transparency:** Always label AI-generated responses
+- **Human-in-the-loop:** Always provide escalation option
+- **Knowledge evolution:** Continuously learn from validated answers
+- **Protect attention:** Filter noise, only alert team on important messages
+
+## Tech Stack Preferences
+- **Backend:** Python 3.11+, python-telegram-bot, FastAPI
+- **AI/ML:** OpenAI GPT-4, LangChain, Qdrant
+- **Workflow:** n8n (self-hosted)
+- **Databases:** PostgreSQL, Redis, Qdrant
+- **Speech-to-Text:** OpenAI Whisper API
+- **Infrastructure:** Docker, Docker Compose
+
+---
+
+**Last Updated:** 2026-01-08
+**Version:** 1.0
+
