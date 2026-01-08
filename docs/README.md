@@ -32,11 +32,14 @@
 - Векторная база знаний
 - Промпты и шаблоны
 
-### 🔗 [Интеграции](./api/integrations.md)
-- **Kaiten** - Service Desk
-- **Speech-to-Text** - транскрибация голосовых
-- **Календари** - Google, Outlook
-- **Таск-трекеры** - Jira, Asana
+### 🔗 Интеграции
+- **[API Integrations](./integrations/)** - Спецификации интерфейсов внешних систем (Swagger/OpenAPI)
+- **[Интеграции](./api/integrations.md)** - Описание интеграций
+  - **Kaiten** - Service Desk
+  - **Speech-to-Text** - транскрибация голосовых
+  - **Календари** - Google, Outlook
+  - **Таск-трекеры** - Jira, Asana
+- **[MTS PBX Integration](./mts-pbx-integration.md)** ☎️ - Интеграция с цифровой АТС МТС, транскрипция звонков, синхронизация с базой знаний
 
 ### 🔒 [Безопасность](../SECURITY.md)
 Управление секретами, токенами и безопасность данных.
@@ -67,18 +70,21 @@
 ### Структура проекта
 ```
 dialog-keeper/
-├── docs/               # Документация
-├── src/                # Исходный код
-│   ├── bot/           # Telegram bot
-│   ├── ai/            # AI/RAG модуль
-│   ├── integrations/  # Внешние интеграции
-│   ├── database/      # Модели и миграции
-│   └── utils/         # Утилиты
-├── tests/             # Тесты
-├── config/            # Конфигурации
-├── data/              # Данные (не в Git)
-├── logs/              # Логи (не в Git)
-└── scripts/           # Скрипты
+├── docs/                    # Документация
+│   ├── integrations/       # API спецификации внешних систем
+│   ├── architecture/       # Архитектура системы
+│   └── development/        # Руководства для разработчиков
+├── src/                     # Исходный код
+│   ├── bot/                # Telegram bot
+│   ├── ai/                 # AI/RAG модуль
+│   ├── integrations/       # Внешние интеграции
+│   ├── database/           # Модели и миграции
+│   └── utils/              # Утилиты
+├── tests/                  # Тесты
+├── config/                 # Конфигурации
+├── data/                   # Данные (не в Git)
+├── logs/                   # Логи (не в Git)
+└── scripts/                # Скрипты
 ```
 
 ### Начало разработки

@@ -44,6 +44,7 @@
 │  │  • Kaiten Service Desk API                              │    │
 │  │  • Calendar Integration (Google/Outlook)                │    │
 │  │  • Task Trackers (Jira, Asana)                          │    │
+│  │  • MTS Digital PBX API (Phone Calls)                    │    │
 │  │  • Internal Team Notifications                          │    │
 │  └────────────────────────────────────────────────────────┘    │
 │                            │                                     │
@@ -94,11 +95,13 @@
 - Карточки Kaiten с решениями
 - Внутренняя и публичная документация
 - FAQ и база знаний компании
+- Транскрипты телефонных звонков через АТС МТС
 
 ### 5. **Integrations**
 - **Kaiten API** - создание/обновление тикетов
 - **Calendar APIs** - проверка доступности, бронирование
 - **Task Trackers** - синхронизация задач
+- **MTS Digital PBX API** - получение записей звонков, транскрипция, webhook уведомления
 - **Internal Channels** - уведомления команды
 
 ### 6. **Data Layer**
@@ -145,6 +148,22 @@
 4. Bot → Process as text message (see above)
 5. Bot → Store both audio + transcript
 6. Bot → Send transcript back: "Вы сказали: ..."
+```
+
+### Телефонный звонок через АТС МТС
+
+```
+1. User → Calls support phone number (via MTS PBX)
+2. MTS API → Webhook notification to Bot (call started/ended)
+3. Bot → Fetch call recording + metadata from MTS API
+4. Bot → Transcribe call with Whisper API
+5. Bot → Classify call content (question/issue/request)
+6. Bot → Extract key topics and questions
+7. Bot → Store in PostgreSQL + vectorize for Qdrant
+8. Bot → Match with existing customer/tickets
+9. Bot → Create Kaiten ticket if needed
+10. Bot → Notify team channel with call summary
+11. Knowledge Base → Call transcript available for RAG
 ```
 
 ## Принципы проектирования

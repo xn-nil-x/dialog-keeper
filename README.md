@@ -27,6 +27,9 @@ The bot represents the company as a single participant in group and private chat
 - **Voice message transcription**  
   Incoming and outgoing voice messages are automatically transcribed and linked to the original conversation context.
 
+- **Phone calls integration via MTS ATS**  
+  Integration with MTS digital PBX for transcribing incoming and outgoing phone calls, matching call context with support questions, and storing in vectorized knowledge base for future analysis.
+
 - **AI knowledge base with RAG**  
   The bot generates fast, clearly labeled AI-based responses using Retrieval-Augmented Generation over:
   - historical support answers from live specialists (continuously enriched),
@@ -84,6 +87,9 @@ The system is built to formalize external communication, prevent implicit or man
 
 - **Транскрибирование голосовых сообщений**  
   Входящие и исходящие голосовые сообщения автоматически преобразуются в текст и связываются с контекстом диалога.
+
+- **Интеграция телефонных звонков через АТС МТС**  
+  Интеграция с цифровой АТС МТС для транскрипции входящих и исходящих телефонных звонков, сопоставления контекста звонков с вопросами техподдержки и сохранения в векторизованной базе знаний для последующего анализа.
 
 - **База знаний и AI-ответы (RAG)**  
   Бот формирует быстрые, явно помеченные как AI, ответы на основе Retrieval-Augmented Generation с использованием:
@@ -143,6 +149,9 @@ The system is built to formalize external communication, prevent implicit or man
 
 - **[n8n Integration Guide](docs/n8n-integration.md)** 🔄  
   Workflow automation, integration examples, and best practices
+  
+- **[MTS PBX Integration](docs/mts-pbx-integration.md)** ☎️  
+  Phone calls integration, transcription, and knowledge base synchronization
 
 ### 👨‍💻 For Developers
 
@@ -214,7 +223,7 @@ See [QUICKSTART.md](QUICKSTART.md) for detailed instructions.
 - **Workflow Automation:** n8n (self-hosted)
 - **Databases:** PostgreSQL, Redis, Qdrant
 - **Speech-to-Text:** OpenAI Whisper API
-- **Integrations:** Kaiten Service Desk, Google Calendar
+- **Integrations:** Kaiten Service Desk, Google Calendar, MTS Digital PBX
 - **Infrastructure:** Docker, Docker Compose, GitHub Actions
 
 See [Technology Stack](docs/technology-stack.md) for detailed analysis.
