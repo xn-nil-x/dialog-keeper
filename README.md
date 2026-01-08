@@ -119,4 +119,157 @@ The system is built to formalize external communication, prevent implicit or man
 - Каналы координации проектов с большим числом участников  
 - Коммуникации с высокой долей поддержки, где ответы должны быть единообразными и переиспользуемыми  
 - Долгосрочное хранение договорённостей, запросов и решений  
-- Быстрые первичные ответы с контролируемой эскалацией к живым специалистам  
+- Быстрые первичные ответы с контролируемой эскалацией к живым специалистам
+
+---
+
+## 📚 Documentation
+
+### 📖 Core Project Documents
+
+- **[Project Philosophy](docs/philosophy.md)** 🎯  
+  Mission, problems we solve, design principles, and project values
+  
+- **[Technical Specification](docs/technical-specification.md)** 📋  
+  Complete technical specification with 50+ functional requirements, architecture, and implementation plan
+  
+- **[Technology Stack](docs/technology-stack.md)** 🛠️  
+  Detailed analysis of technologies, frameworks comparison, and recommendations
+  
+- **[Architecture Overview](docs/architecture/overview.md)** 🏗️  
+  System architecture, components, data flows, and technical stack
+
+### 🔧 Integration & Workflow
+
+- **[n8n Integration Guide](docs/n8n-integration.md)** 🔄  
+  Workflow automation, integration examples, and best practices
+
+### 👨‍💻 For Developers
+
+- **[Quick Start Guide](QUICKSTART.md)** 🚀  
+  Installation, setup, and first launch
+  
+- **[Coding Standards](docs/development/CODING_STANDARDS.md)** 📐  
+  Python style guide, type hints, testing standards, and code examples
+  
+- **[Contributing Guide](docs/development/CONTRIBUTING.md)** 🤝  
+  How to contribute, development workflow, and PR process
+  
+- **[Code Review Guide](docs/development/CODE_REVIEW_GUIDE.md)** 🔍  
+  Guidelines for reviewers and authors
+
+### 🔒 Security
+
+- **[Security Guidelines](SECURITY.md)** 🛡️  
+  Secrets management, token protection, and security best practices
+
+### 📝 Additional Resources
+
+- **[Authors & Contributors](AUTHORS.md)** 👥  
+  Project creator and contributors
+  
+- **[Full Documentation Index](docs/README.md)** 📚  
+  Complete navigation through all documentation
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.11+
+- Docker & Docker Compose
+- Telegram Bot Token (from @BotFather)
+- OpenAI API Key
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/xn-nil-x/dialog-keeper.git
+cd dialog-keeper
+
+# Setup environment
+cp .env.example .env
+# Edit .env and add your tokens
+
+# Run with Docker Compose
+docker-compose up -d
+
+# Or run locally
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python src/main.py
+```
+
+See [QUICKSTART.md](QUICKSTART.md) for detailed instructions.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Backend:** Python 3.11+, python-telegram-bot, FastAPI
+- **AI/ML:** OpenAI GPT-4, LangChain, Qdrant (Vector DB)
+- **Workflow Automation:** n8n (self-hosted)
+- **Databases:** PostgreSQL, Redis, Qdrant
+- **Speech-to-Text:** OpenAI Whisper API
+- **Integrations:** Kaiten Service Desk, Google Calendar
+- **Infrastructure:** Docker, Docker Compose, GitHub Actions
+
+See [Technology Stack](docs/technology-stack.md) for detailed analysis.
+
+---
+
+## 📊 Project Status
+
+- **Version:** 0.1.0 (Development)
+- **Status:** 🚧 Active Development
+- **License:** GPL-3.0
+- **Author:** Nil Podozerov
+- **Company:** РИПАС (RIPAS)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please read:
+
+1. [Contributing Guide](docs/development/CONTRIBUTING.md)
+2. [Coding Standards](docs/development/CODING_STANDARDS.md)
+3. [Code Review Guide](docs/development/CODE_REVIEW_GUIDE.md)
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Nil Podozerov**
+- Company: РИПАС (RIPAS)
+- GitHub: [@xn-nil-x](https://github.com/xn-nil-x)
+- Project: Dialog Keeper
+
+---
+
+## 🙏 Acknowledgments
+
+- OpenAI for GPT-4 and Whisper API
+- Telegram for the Bot API
+- The open-source community for amazing tools
+
+---
+
+**Copyright © 2026 Nil Podozerov / РИПАС (RIPAS)**  
